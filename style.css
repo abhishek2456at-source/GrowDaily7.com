@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #24312b;
+  background: #f3f8f4;
+}
+
+.navbar, .hero, #features, #reviews {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #183b2512;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  color: #218c5a;
+}
+
+.nav-links a {
+  margin-left: 16px;
+  color: #34463b;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.hero h2 {
+  color: #218c5a;
+}
+
+.search-box input, .search-box button {
+  padding: 12px;
+  border: 1px solid #ccd8cf;
+  border-radius: 8px;
+}
+
+.search-box button, .login-btn {
+  background: #218c5a;
+  color: white !important;
+}
+
+.cards {
+  display: flex;
+  gap: 16px;
+  
+}
+
+.card, .review {
+  flex: 1;
+  padding: 18px;
+  background: #f3f8f4;
+  border-radius: 12px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #66756b;
+}
+
+@media (max-width: 700px) {
+  .navbar, .cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links a {
+    margin: 6px;
+  }
+}

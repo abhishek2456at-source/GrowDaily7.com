@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DailyGrow</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+  <!--navbar-->
+  <header class="navbar">
+    <div class="logo"><h1>GrowDaily</h1></div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#">Blog</a>
+      <a href="#" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <div class="hero">
+    <h2>Track Your Daily Learning Growth for FREE</h2>
+    <p>Pick a subject, answer a few questions, and see yourself improve every day.</p>
+
+    <p class="hint">Try: <a id="example">Python basics</a></p>
+    <p id="message"></p>
+
+    <a href="#features">↑ Grow My Skills</a>
+  </div>
+
+  <!-- ========== FEATURES ========== -->
+  <section id="features">
+    <h2>Features</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>🔗 More than a notebook. We help you:</h3>
+        <p>
+          Choose any subject you are learning<br>
+          and set how much percent efforts<br>
+          you did to choosen subject<br></br>
+          Build a daily study habit
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🪙 No Fees. Ever.</h3>
+        <p>
+          Zero monthly subscriptions<br>
+          Zero hidden charges<br>
+          Unlimited access to all features<br>
+          Learning progress should be available to every student – not locked behind paywalls.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 What You Can Do</h3>
+        <p>
+          Track your daily learning<br>
+          Find topics that need more practice<br>
+          Monitor your growth over time<br>
+          Keep a streak going<br>
+          Set goals and reach them step by step
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS-->
+  <section id="reviews">
+    <h2>What Our Users Say</h2>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        "Finally, a simple way to track my studies."<br>
+        I tried many apps, but they were confusing. GrowDaily takes two minutes a day and I can see my progress.
+        <b>- Aditya Singh, BTech Student</b>
+      </div>
+    </div>
+
+    <div class="more-wrap">
+      <button id="showMore">▾ Show more</button>
+    </div>
+  </section>
+  <footer>© 2026 GrowDaily. Learn a little every day.</footer>
+
+  <!--JAVASCRIPT -->
+  <script>
+    // Get the elements we want to control
+    const input = document.getElementById('subjectInput');
+    const startBtn = document.getElementById('startBtn');
+    const message = document.getElementById('message');
+    const example = document.getElementById('example');
+    const showMore = document.getElementById('showMore');
+
+    startBtn.addEventListener('click', function () {
+      const subject = input.value.trim();
+      if (subject === '') {
+        message.textContent = 'Please type what you learned today.';
+      } else {
+        message.textContent = 'Great! Let\'s track your growth in "' + subject + '".';
+        // Later: send the user to your tracker page, e.g. window.location.href = 'tracker.html';
+      }
+    });
+
+    // Clicking the example link fills the input box
+    example.addEventListener('click', function () {
+      input.value = 'Python basics';
+    });
+
+    // "Show more" reveals the hidden reviews, then hides the button
+    showMore.addEventListener('click', function () {
+      document.querySelectorAll('.review.hidden').forEach(function (r) {
+        r.classList.remove('hidden');
+      });
+      showMore.style.display = 'none';
+    });
+  </script>
+  </body>
+</html>
